@@ -19,7 +19,7 @@ Sub ThankYou()
     
     With rpl
         .HTMLBody = "<p class=MsoNormal>That's great, thanks!</p>" + rpl.HTMLBody
-        .Display
+        .Send
     End With
     
     Set itm = Nothing
