@@ -5,6 +5,7 @@ Sub FlagForReview()
     With itm
         .MarkAsTask olMarkTomorrow
         .FlagRequest = "Review"
+        ' Beware: This will *replace* any existing categories on the selected MailItem
         .Categories = "Review"
         .Save
     End With
