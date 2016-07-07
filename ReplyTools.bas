@@ -15,7 +15,6 @@ Sub ThankYou()
     Dim rpl As Outlook.MailItem
     Dim replyStrings()
     Dim idx As Integer
-    Dim objDoc As Word.Document
     
     Set itm = Common.GetCurrentItem
     Set rpl = itm.Reply
