@@ -33,9 +33,12 @@ Sub ThankYou()
     Set objDoc = rpl.GetInspector.WordEditor
     objDoc.Characters(1).InsertBefore replyStrings(idx)
     
-    ' Oddly, this currently results in an empty email when calling rpl.Send ...
-    ' rpl.Display will open the reply window correctly and the user can hit the Send button
-    rpl.Display
+    ' Oddly, calling rpl.Send directly results in an empty message.
+    ' Calling rpl.Display first will open the reply window briefly, but it works.
+    With rpl
+        .Display
+        .Send
+    End With
     
     Set itm = Nothing
     Set rpl = Nothing
